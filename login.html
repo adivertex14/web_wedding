@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elysium Weddings | Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        body {
+            background: url('img/back1.jpg') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            /* Susun elemen secara vertikal */
+            justify-content: center;
+            /* Pusatkan elemen secara vertikal */
+            align-items: center;
+            /* Pusatkan elemen secara horizontal */
+        }
+
+        .logo-container {
+            margin-bottom: 0px;
+            margin-top: -100px;
+
+            /* Jarak antara logo dan login-container */
+        }
+
+        .logo {
+            max-width: 300px;
+            /* Ukuran maksimum logo */
+            height: auto;
+            /* Proporsi gambar tetap */
+            display: block;
+        }
+
+
+
+        .login-container {
+            max-width: 400px;
+            width: 100%;
+            padding: 20px;
+            /* height: 100%; */
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .login-container h2 {
+            font-size: 30px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .btn-primary {
+            background-color: #6c757d;
+            border-color: #6c757d;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 8px;
+            display: flex;
+            text-align: center;
+
+            margin-top: 20px;
+            width: 100%;
+
+            justify-content: center;
+
+            cursor: pointer;
+
+
+        }
+
+        .btn-primary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+        .text-center a {
+            font-size: 14px;
+            color: #6c757d;
+        }
+
+        .text-center a:hover {
+            color: #007bff;
+        }
+
+        footer {
+            text-align: center;
+            padding: 5px;
+            background-color: #343a40;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="logo-container">
+        <img src="img/logo_elysium.png" alt="Logo Elysium" class="logo">
+    </div>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm" onsubmit="return validateLogin()">
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" id="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" required>
+            </div>
+            <button type="submit" class="btn btn-primary text-center btn-block">Login</button>
+        </form>
+        <div class="text-center mt-3">
+            <a href="registrasi.html">Belum punya akun? Daftar di sini</a>
+
+        </div>
+    </div>
+
+
+
+    <footer class="text-center py-3" style="background-color: #2e2f30;">
+        <p>Copyright &copy; 2024 Kelompok_2_TIF K 22</p>
+        <p>Maria Marlina Maduwu (21552011186) - Adi Supriatna (22552011132) - Nama Anggota 3 (0000000000) </p>
+    </footer>
+
+    <script>
+        function validateLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Ambil username dan password dari localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            // Verifikasi username dan password
+            if (username === storedUsername && password === storedPassword) {
+                alert("Login berhasil!");
+                // Redirect ke Halaman Menu Utama
+                window.location.href = "dashboard.html"; // Ganti dengan halaman menu utama yang sesuai
+                return false; // Mencegah pengiriman form
+            } else {
+                alert("Username atau Password salah!");
+                return false; // Mencegah pengiriman form
+            }
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+</body>
+
+</html>
